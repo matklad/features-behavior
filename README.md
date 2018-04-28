@@ -15,4 +15,17 @@ xyz disabled
     Finished dev [unoptimized + debuginfo] target(s) in 0.37 secs
      Running `target/debug/bar`
 xyz enabled
+
+~/tmp/foo master
+λ cargo +stable build --all --features xyz
+    Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
+
+~/tmp/foo master
+λ ./target/debug/bar
+xyz disabled
+
+~/tmp/foo master
+λ cargo +nightly build --all --features xyz
+error: cannot specify features for more than one package
+
 ```
